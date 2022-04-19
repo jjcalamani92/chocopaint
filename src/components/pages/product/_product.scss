@@ -1,0 +1,19 @@
+@use '../../../style/global' as *;
+
+
+.product {
+@include grid(5,1.5rem);
+@include tablet {
+    @include grid(3,1rem);
+}
+@include telefono {
+    @include grid(2,1rem);
+}
+}
+.products {
+
+}
+
+.product-more {
+    
+}

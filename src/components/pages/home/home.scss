@@ -1,0 +1,96 @@
+@use '../../../style/global' as *;
+
+.home {
+  .slide {
+    @include grid(2, 1.5rem);
+    height: calc(90vh - 8rem);
+    align-items: center;
+    
+    .content {
+      span {
+        @include graphText(3rem);
+        text-transform: capitalize;
+      }
+
+      h3 {
+        @include titleText(8rem);
+        padding: 1rem 0;
+      }
+    }
+    .image {
+      overflow: hidden;
+      img {
+        height: auto;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+
+  // .swiper-button-next,
+  // .swiper-button-prev {
+  //   position: absolute;
+  //   bottom: 2rem;
+  //   right: 2rem;
+  //   height: 6rem;
+  //   width: 6rem;
+  //   line-height: 5.5rem;
+  //   font-size: 4rem;
+  //   border: $border;
+  //   background: $white;
+  //   border-radius: 0.5rem;
+  //   cursor: pointer;
+  //   text-align: center;
+
+  //   &:hover {
+  //     background: $black;
+  //     color: $white;
+  //   }
+  // }
+
+  .swiper-pagination-bullet {
+    background: $primaryColor;
+
+    &.swiper-pagination-bullet-active {
+      background: $primaryColor;
+    }
+  }
+  @include tablet {
+    .slide {
+      height: auto;
+      @include grid(1, 1.5rem);
+      text-align: center;
+      flex-direction: column-reverse;
+      .content {
+        .btn{
+          margin-bottom: 5rem;
+        }
+        grid-row: 2;
+        span {
+          @include graphText(3rem);
+          text-transform: capitalize;
+        }
+  
+        h3 {
+          @include titleText(5rem);
+          padding: 1rem 0;
+        }
+      }
+      .image{
+        grid-row: 1;
+        img{
+          width: 100%;
+        }
+      }
+    }
+  }
+  @include telefono{
+    .slide{
+      height: auto;
+      .btn{
+        margin-bottom: 5rem;
+      }
+    }
+  }
+}
